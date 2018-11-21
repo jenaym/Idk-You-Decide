@@ -1,0 +1,61 @@
+a:link {
+    color: black;
+    text-decoration: none;
+}
+
+.jumbotron {
+  background-color: whitesmoke;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  
+}
+
+.foot {
+  text-align: center;
+  padding: 10px;
+  color: whitesmoke;
+}
+
+.btn:hover {
+font-weight: bold;
+}
+
+.btn {
+background-color: whitesmoke;
+}
+
+/* .card-header {
+background-color: rgb(75, 190, 175);  
+} */
+
+tr:hover {
+background-color: rgb(226, 225, 231);    
+}
+
+
+input[type=text]{
+background-color: rgb(252, 252, 252);    
+}
+
+.custom-select{
+background-color: rgb(252, 252, 252);    
+}
+
+.container-image {
+    background: url(https://scontent.fsea1-1.fna.fbcdn.net/v/t1.0-9/41719192_10217239159355013_2729314655611650048_n.jpg?_nc_cat=105&_nc_ht=scontent.fsea1-1.fna&oh=ec6fe5ffad9357f1c60b17e75b4e645a&oe=5C688B29) no-repeat center fixed; 
+    background-size: cover;
+    /* margin: 2%; */
+}
+
+.card {
+  margin-top: 2%;
+  background-color: whitesmoke;
+  border: none;
+}
+
+
+@media screen and (max-width: 768px) {
+  .col {
+    min-width: 100%;
+  }
+}
