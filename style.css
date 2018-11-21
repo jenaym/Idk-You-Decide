@@ -51,6 +51,7 @@ background-color: rgb(252, 252, 252);
   margin-top: 2%;
   background-color: whitesmoke;
   border: none;
+  border-radius: 0%;
 }
 
 
@@ -58,4 +59,8 @@ background-color: rgb(252, 252, 252);
   .col {
     min-width: 100%;
   }
+}
+
+.suggestion {
+  margin: 2%;
 }
