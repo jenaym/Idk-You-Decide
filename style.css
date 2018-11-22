@@ -42,7 +42,7 @@ background-color: rgb(252, 252, 252);
 }
 
 .container-image {
-    background: url(lotus.jpg no-repeat center fixed; 
+    background: url(lotus.JPG) no-repeat center fixed; 
     background-size: cover;
     /* margin: 2%; */
 }
