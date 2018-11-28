@@ -1,13 +1,9 @@
-/* a:link {
-    color: black;
-   
-} */
+
 
 .jumbotron {
   background-color: whitesmoke;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
-  
 }
 
 .foot {
@@ -24,9 +20,7 @@ font-weight: bold;
 background-color: whitesmoke;
 }
 
-/* .card-header {
-background-color: rgb(75, 190, 175);  
-} */
+
 
 tr:hover {
 background-color: rgb(226, 225, 231);    
@@ -41,10 +35,11 @@ background-color: rgb(252, 252, 252);
 background-color: rgb(252, 252, 252);    
 }
 
+
 .container-image {
     background: url(lotus.JPG) no-repeat center fixed; 
     background-size: cover;
-    /* margin: 2%; */
+
 }
 
 .card {
@@ -90,3 +85,4 @@ background-color: rgb(252, 252, 252);
   background-color: rgb(226, 225, 231);
   margin: 0%;
 }
+
