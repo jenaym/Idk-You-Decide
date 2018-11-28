@@ -1,4 +1,6 @@
-
+body {
+  background-color: rgb(110, 124, 120);
+}
 
 .jumbotron {
   background-color: whitesmoke;
