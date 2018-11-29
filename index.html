@@ -20,15 +20,12 @@
       <div class="col col-lg-12">
         <div class="jumbotron jumbotron-fluid">
           <div class="container">
-            <h1 class="display-4">Fluid jumbotron</h1>
-            <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+            <h1 class="display-4">IDK YOU DECIDE <i class="fas fa-hiking"></i></h1>
+            <p class="lead">Can't think of what to eat? Where to go? What to do? Let us decide for you!</p>
           </div>
         </div>
       </div>
     </div>
-
-
-
 
     <div class="row">
 
@@ -41,6 +38,7 @@
               <div class="form-group">
                 <label for="activityTypeInput"> What sort of thing would you like to do or why?</label>
                 <input type="text" class="form-control" id="activityTypeInput" placeholder="Subject">
+                <div class="data-validation" id="invalidSubject"></div>
               </div>
               <div class="form-group">
                 <label for="outdoor"> Outdoor or indoor?</label>
@@ -64,19 +62,23 @@
                 </select>
               </div>
 
-              <div class="form-group">
-                <label for="numOfPeopleInput"> How many people are you:</label>
-                <input type="text" class="form-control" id="numOfPeopleInput" placeholder="Just me.">
-              </div>
-
-              <div class="form-group">
+              <!-- <div class="form-group">
                 <label for="gotimeInput"> When do you plan on going? </label>
                 <input type="text" class="form-control" id="gotimeInput" placeholder="MM/DD">
+              </div> -->
+
+              <div class="form-group">
+                <label for="rigger"> Indoors or Outdoors?</label>
+                <label class="mr-sm-2 sr-only" for="rigger">Preference</label>
+                <select class="custom-select mr-sm-2" id="rigger">
+                  <option selected>Either</option>
+                  <option>Indoors</option>
+                  <option>Outdoors</option>
+                </select>
               </div>
 
-
               <button type="submit" class="btn" id="search">Search <i class="fas fa-search"></i></button>
-              <button type="button" class="btn" id="clear">Clear Results <i class="fas fa-trash-alt"></i></button>
+              <button type="button" class="btn" id="random">Random!</button>
             </form>
           </div>
         </div>

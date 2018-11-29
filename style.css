@@ -86,3 +86,8 @@ background-color: rgb(252, 252, 252);
   margin: 0%;
 }
 
+.data-validation {
+  color:red;
+  font-size: 75%;
+  font-style: italic;
+}

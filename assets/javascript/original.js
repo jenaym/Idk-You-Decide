@@ -1,6 +1,8 @@
 
 $("#search").click(function () {
     event.preventDefault();
+    $('#suggestions-list').empty();
+    $('#suggestions-map').empty();
 
      //a valid, fully-formed foursquare API request that includes these parameters 
      //looks like this:
@@ -8,6 +10,10 @@ $("#search").click(function () {
      //var outdoor = $("#outdoor").val();
 
      let subject = $('#activityTypeInput').val().trim() + ' ';
+
+     if (subject === ' ') {
+         $("#invalidSubject").text("Please enter the type of activity or click random");
+     };
      //let numOfPeople = $('#numOfPeopleInput').val().trim() + ' ';
      //let time = $('#gotimeInput').val().trim() + ' ';
 
@@ -64,18 +70,19 @@ $("#search").click(function () {
             $('#suggestions-list').append(listItem)
             $('.suggestion').addClass('list-group-item list-group-item-action list-group-item') 
 
+            database.ref().push({
+                name: results.response.venues[i].name,
+                address: linkResponse.response.venue.location.address,
+                link: linkResponse.response.venue.url,
+        
+              });
+
 
         });
-
-
 
     };
  });
  
- $("#clear").click(function () {
-    $('#suggestions-list').empty();
-     $('#suggestions-map').empty();
-  }); 
 
 $('#mapView').click (function () {
     $('#suggestions-list').hide();
