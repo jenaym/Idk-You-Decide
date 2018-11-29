@@ -1,8 +1,10 @@
 
 $("#search").click(function () {
+
     event.preventDefault();
     $('#suggestions-list').empty();
     $('#suggestions-map').empty();
+    $("#invalidSubject").empty();
 
      //a valid, fully-formed foursquare API request that includes these parameters 
      //looks like this:
