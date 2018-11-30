@@ -1,5 +1,13 @@
+$('#suggestions-map').hide();
+
+
 $("#search").click(function () {
     event.preventDefault();
+    $("#suggestion-list").empty();
+    $("#suggestion-map").empty();
+    $("#invalidSubject").empty();
+
+
 
      //a valid, fully-formed foursquare API request that includes these parameters 
      //looks like this:
@@ -44,7 +52,7 @@ $("#search").click(function () {
          var results = response.response.groups[0].items
          console.log(results);
 
-         //$('#suggestions-map').hide();
+         $('#suggestions-map').hide();
 
     
       for (let i = 0; i < limit; i++) {
@@ -70,12 +78,9 @@ $("#search").click(function () {
 
 
         };
-
-
-
-    
- });
+    });
 });
+
  
  $("#clear").click(function () {
     $('#suggestions-list').empty();
