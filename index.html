@@ -39,17 +39,27 @@
 
             <form>
               <div class="form-group">
-                <label for="activityTypeInput"> What sort of thing would you like to do or why?</label>
-                <input type="text" class="form-control" id="activityTypeInput" placeholder="Subject">
-              </div>
-              <div class="form-group">
-                <label for="outdoor"> Outdoor or indoor?</label>
-                <input type="text" class="form-control" id="outdoor" placeholder="Subject">
+                <label class="mr-sm-2 sr-only" for="activityTypeInput">Choose a activity topic that interests you:</label>
+                <select class="custom-select mr-sm-2" id="activityTypeInput" placeholder="Choose an Activity">
+                  <option>Top Picks</option>
+                  <option>Trending</option>
+                  <option>Outdoors</option>
+                  <option>Sights</option>
+                  <option>Food</option>
+                  <option>Drinks</option>
+                  <option>Coffee</option>
+                  <option>Shops</option>
+                  <option>Arts</option>
+                </select>
               </div>
 
               <div class="form-group">
-                <label for="numOfOptionsInput"> Number of Options to Retrieve:</label>
-                <label class="mr-sm-2 sr-only" for="numOfOptionsInput">Preference</label>
+                <label for="locationInput">Prefered Activity Location:</label>
+                <input type="text" class="form-control" id="locationInput" placeholder="Seattle, WA">
+              </div>
+
+              <div class="form-group">
+                <label class="mr-sm-2 sr-only" for="numOfOptionsInput">Number of Options to Retrieve:</label>
                 <select class="custom-select mr-sm-2" id="numOfOptionsInput">
                   <option>1</option>
                   <option>2</option>
@@ -65,14 +75,37 @@
               </div>
 
               <div class="form-group">
-                <label for="numOfPeopleInput"> How many people are you:</label>
-                <input type="text" class="form-control" id="numOfPeopleInput" placeholder="Just me.">
+                  <label class="mr-sm-2 sr-only"for="dayInput">Prefered Day of the Week of Activity:</label>
+                  <select class="custom-select mr-sm-2" id="dayInput">
+                    <option value="0">Sunday</option>
+                    <option value="1">Monday</option>
+                    <option value="2">Tuesday</option>
+                    <option value="3">Wednesday</option>
+                    <option value="4">Thursday</option>
+                    <option value="5">Friday</option>
+                    <option value="6">Saturday</option>
+                  </select>
               </div>
 
               <div class="form-group">
-                <label for="gotimeInput"> When do you plan on going? </label>
-                <input type="text" class="form-control" id="gotimeInput" placeholder="MM/DD">
+                  <label for="gotimeInput">Prefered Time of Activity:</label>
+                  <input type="time" class="form-control" id="gotimeInput" placeholder="12:00" min="0:00" max="23:59">
               </div>
+              <!-- <div class="form-group">
+                  <label for="gotimeInput">Prefered Time:</label>
+                  <input type="time" class="form-control" id="gotimeInput" placeholder="12:00" min="0:00" max="23:59">
+              </div> -->
+              <div class="form-group">
+                  <label class="mr-sm-2 sr-only" for="priceInput">Prefered Entree Price:</label>
+                  <select class="custom-select mr-sm-2" id="priceInput">
+                    <option selected>No Price Preference</option>
+                    <option value="1">Less than $10</option>
+                    <option value="2">$10-$20</option>
+                    <option value="3">$20-$30</option>
+                    <option value="4">More than $30</option>
+                  </select>
+              </div>
+
 
 
               <button type="submit" class="btn" id="search">Search <i class="fas fa-search"></i></button>
@@ -134,7 +167,7 @@
     crossorigin="anonymous"></script>
   <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
 
-  <script src="api.js"></script>
+
   <script src="logic.js"></script>
   <script src="assets/javascript/original.js"></script>
 
