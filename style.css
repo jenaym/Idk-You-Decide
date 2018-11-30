@@ -1,4 +1,6 @@
-
+body {
+  background-color: rgb(110, 124, 120);
+}
 
 .jumbotron {
   background-color: whitesmoke;
@@ -86,3 +88,8 @@ background-color: rgb(252, 252, 252);
   margin: 0%;
 }
 
+.data-validation {
+  color:red;
+  font-size: 75%;
+  font-style: italic;
+}
