@@ -1,5 +1,69 @@
 $('#suggestions-map').hide();
 
+ // google map API information
+ var googleAPI_key = "AIzaSyC7vnbVasWSJ-2i10phXjk_Q07yE6tOa-M";
+ var mapsURL = "https://maps.googleapis.com/maps/api/js?key=" + googleAPI_key;
+
+let coordinatesArray = [];
+// function initMap(myLatLng) {
+function initMap(coordinatesArray) {
+    //var myLatLng = {lat: -25.363, lng: 131.044};
+  
+    var map = new google.maps.Map(document.getElementById('map-container-5'), {
+      zoom: 12,
+      center: coordinatesArray[0]
+    });
+
+     
+        for (var i = 0; i < coordinatesArray.length; i++) {
+        var marker = new google.maps.Marker({
+          position: coordinatesArray[i],
+          map: map,
+          title: 'Hello World!'
+        });
+    
+      }
+};
+
+// initMap();
+
+var mapOptions = {
+  zoom: 4,
+  center: {lat: 47.6553216, lng: -122.3155712}
+}
+var map = new google.maps.Map(document.getElementById("map-container-5"), mapOptions);
+
+function createMarker() {
+    var marker = new google.maps.Marker({
+    position: myLatlng,
+    title:"Hello World!"
+});
+
+};
+
+// To add the marker to the map, call setMap();
+// marker.setMap(map);
+
+
+
+// $("#mapView").click(function initMap() {
+//     var map;
+//     var infowindow;
+
+//     //default setting to be in Seattle
+//     pos = {
+//         lat: 47.6553216,
+//         lng: -122.3155712
+//     };
+
+//     map = new google.maps.Map(document.getElementById('map-container-5'), {
+//         center: pos,
+//         zoom: 15
+//     });
+
+
+
+
 
 $("#search").click(function () {
     event.preventDefault();
@@ -67,6 +131,22 @@ $("#search").click(function () {
             //itemAddress.text(JSON.stringify(results[i].venue.location.formattedAddress));
             let address = results[i].venue.location.formattedAddress;
             itemAddress.text(address[0] + " " + address[1]);
+
+            let myLatLng = {
+                lat: results[i].venue.location.lat,
+                lng: results[i].venue.location.lng
+            }
+
+            coordinatesArray.push(myLatLng);
+
+            
+            // let lat =  results[i].venue.location.lat;
+            // let lng = results[i].venue.location.lng;
+
+            //createMarker(myLatLng);
+            // var myLatlng = new google.maps.LatLng(lat,lng);
+            // marker.setMap(map);
+            
             
             let itemDescription = $("<div class='description'>");
             itemDescription.text("Activity Description: " + JSON.stringify(results[i].venue.categories[0].name));
@@ -76,8 +156,12 @@ $("#search").click(function () {
             $('#suggestions-list').append(listItem)
             $('.suggestion').addClass('list-group-item list-group-item-action list-group-item') 
 
+            
+
 
         };
+
+        initMap(coordinatesArray);
     });
 });
 
