@@ -1,7 +1,10 @@
+
 // the random buttom displays the 
 $("#random").click(function () {
     $('#suggestions-list').empty();
     $('#suggestions-map').empty();
+
+    locations = [];
   
    database.ref('num/').on("value", function(numSnap) {
   
@@ -19,16 +22,30 @@ $("#random").click(function () {
   
   
           let randomItem = $('<div class="suggestion">');
-          //let options =  $('<span>').text(j + 1 + ' ');
-          let randomName = $('<span>').text(snapshot.val().name);
-          let randomAddress= $('<span>').text(snapshot.val().address);
-          let randomDescription = $('<div class="description">').text(snapshot.val().discripton);
-            randomItem.append(randomName, randomAddress, randomDescription);
+
+          let randomName = snapshot.val().name;
+          let nameSpan = $('<span>').text(randomName);
+
+
+          let randomAddress = snapshot.val().address;
+          let addressDiv = $('<div class="address">').text(randomAddress);
+
+          let randomDescription = snapshot.val().description;
+
+          let itemDescription = $("<div class='description'>");
+          itemDescription.text("Activity Description: " + randomDescription);
+
+            randomItem.append(nameSpan, addressDiv, itemDescription);
+            console.log(itemDescription);
          
                 $('#suggestions-list').append(randomItem)
                 $('.suggestion').addClass('list-group-item list-group-item-action list-group-item') 
-      });
-    }
+       
+        });
+    };
+
        });
+
+
       }); 
   
