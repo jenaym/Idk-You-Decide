@@ -69,14 +69,21 @@ $("#search").click(function () {
     event.preventDefault();
     $("#suggestion-list").empty();
     $("#suggestion-map").empty();
-    $("#invalidSubject").empty();
+    $("#invalidLocation").empty();
 
 
 
      //a valid, fully-formed foursquare API request that includes these parameters 
      //looks like this:
      let subject = $('#activityTypeInput').val().toLowerCase();
-     let locationInput = $('#locationInput').val().trim() + ' ';
+     let locationInput = $('#locationInput').val().trim();
+     console.log(locationInput)
+     if ($('#locationInput').val().trim() + 'none' === 'none') {
+         console.log('no')
+     $('#invalidLocation').text('Please input a valid location.')
+       }
+
+
      console.log(locationInput);
      let limit = $('#numOfOptionsInput').val();
      let timeInput = $('#gotimeInput').val();
@@ -93,9 +100,10 @@ $("#search").click(function () {
         console.log(day);
     
 
-    //  if (dayInput === )
-     let priceInput = $('#priceInput').val();
-     //let location = "Seattle, WA";
+        let priceInput = "&price=" + $('#priceInput').val();
+        if (priceInput === '&price=No Price Preference') {
+          priceInput = '';
+        }
 
 
      //let numOfPeople = $('#numOfPeopleInput').val().trim() + ' ';
@@ -105,7 +113,7 @@ $("#search").click(function () {
 
     var queryURL = 'https://api.foursquare.com/v2/venues/explore' + "?client_id=" + clientID +
          "&client_secret=" + client_secret + "&near=" + locationInput + "&section=" + subject + "&time=any" +
-         "&day=" + day + "&price=" + priceInput + "&v=20181129";
+         "&day=" + day + priceInput + "&v=20181129";
      //location needs to be in longitude and latitude
      console.log(queryURL);
 
@@ -156,8 +164,21 @@ $("#search").click(function () {
             $('#suggestions-list').append(listItem)
             $('.suggestion').addClass('list-group-item list-group-item-action list-group-item') 
 
-            
+                
+            //this puts option to chuse from in the database
+            database.ref(dataCounter + '/').set({
+                address: address[0] + " " + address[1],
+                discription: results[i].venue.categories[0].name,
+                name: results[i].venue.name,
+                });
 
+            
+            //this create a different name for each item in th data-base
+                dataCounter ++
+
+                database.ref('num/').set({
+                    dataCount: dataCounter
+                    });
 
         };
 

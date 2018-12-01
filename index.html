@@ -40,7 +40,7 @@
 
                 <label class="mr-sm-2 sr-only" for="activityTypeInput">Choose a activity topic that interests you:</label>
                 <select class="custom-select mr-sm-2" id="activityTypeInput" placeholder="Choose an Activity">
-<!--                   <option>Top Picks</option>
+                 <option>Top Picks</option>
                   <option>Trending</option>
                   <option>Outdoors</option>
                   <option>Sights</option>
@@ -51,15 +51,15 @@
                   <option>Arts</option>
                 </select> 
 
-                <label for="activityTypeInput"> What sort of thing would you like to do or why?</label>
+               <!-- <label for="activityTypeInput"> What sort of thing would you like to do or why?</label>
                 <input type="text" class="form-control" id="activityTypeInput" placeholder="Subject"> -->
-                <div class="data-validation" id="invalidSubject"></div>
 
               </div>
 
               <div class="form-group">
                 <label for="locationInput">Prefered Activity Location:</label>
                 <input type="text" class="form-control" id="locationInput" placeholder="Seattle, WA">
+                <div class="data-validation" id="invalidLocation"></div>
               </div>
 
               <div class="form-group">
@@ -106,18 +106,6 @@
                     <option value="4">More than $30</option>
                   </select>
               </div>
-
-
-              <div class="form-group">
-                <label for="rigger"> Indoors or Outdoors?</label>
-                <label class="mr-sm-2 sr-only" for="rigger">Preference</label>
-                <select class="custom-select mr-sm-2" id="rigger">
-                  <option selected>Either</option>
-                  <option>Indoors</option>
-                  <option>Outdoors</option>
-                </select>
-              </div>
-
 
               <button type="submit" class="btn" id="search">Search <i class="fas fa-search"></i></button>
               <button type="button" class="btn" id="random">Random!</button>
@@ -177,8 +165,26 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7vnbVasWSJ-2i10phXjk_Q07yE6tOa-M&libraries=places"></script>
 
 
-  <script src="logic.js"></script>
+<script>
+  var config = {
+  apiKey: "AIzaSyCPNtdBaMWSmmCGakJ4GQ2UX6hz4uU2XsQ",
+  authDomain: "idk-you-decide.firebaseapp.com",
+  databaseURL: "https://idk-you-decide.firebaseio.com",
+  projectId: "idk-you-decide",
+  storageBucket: "idk-you-decide.appspot.com",
+  messagingSenderId: "993304386734"
+};
+firebase.initializeApp(config);
+
+//Create a variable to reference the database
+const database = firebase.database();
+let dataCounter = 0;
+</script>
+
+
+  <!-- <script src="logic.js"></script> -->
   <script src="original.js"></script>
+  <script src="firebase.js"></script>
   <!-- <script src="location.js"></script> -->
 
   </body>
