@@ -5,7 +5,32 @@ $('#suggestions-map').hide();
  var mapsURL = "https://maps.googleapis.com/maps/api/js?key=" + googleAPI_key;
 
 
+
 let locations = [];
+
+var placeSearch, autocomplete;
+
+function initAutocomplete() {
+  // Create the autocomplete object, restricting the search predictions to
+  // geographical location types.
+  autocomplete = new google.maps.places.Autocomplete(
+      document.getElementById('autocomplete'), {types: ['geocode']});
+
+  // Avoid paying for data that you don't need by restricting the set of
+  // place fields that are returned to just the address components.
+  autocomplete.setFields(['address_component']);
+
+  // When the user selects an address from the drop-down, populate the
+  // address fields in the form.
+  autocomplete.addListener('place_changed', fillInAddress);
+}
+function fillInAddress() {
+  // Get the place details from the autocomplete object.
+  var place = autocomplete.getPlace();
+};
+
+initAutocomplete();
+
 
 
 $("#search").click(function () {
@@ -13,19 +38,17 @@ $("#search").click(function () {
     $("#suggestion-list").empty();
     $("#suggestion-map").empty();
     $("#invalidLocation").empty();
-    locations = [];
-
-
 
      //a valid, fully-formed foursquare API request that includes these parameters 
      //looks like this:
      let subject = $('#activityTypeInput').val().toLowerCase();
-     let locationInput = $('#locationInput').val().trim();
-     console.log(locationInput)
-     if ($('#locationInput').val().trim() + 'none' === 'none') {
-         console.log('no')
-     $('#invalidLocation').text('Please input a valid location.')
-       }
+
+    let locationInput = $('#autocomplete').val().trim();
+    console.log(locationInput)
+    if ($('#autocomplete').val().trim() + 'none' === 'none') {
+        console.log('no')
+    $('#invalidLocation').text('Please input a valid location.')
+      }
 
 
      console.log(locationInput);
@@ -114,7 +137,7 @@ $("#search").click(function () {
                 });
 
             
-            //this create a different name for each item in th data-base
+            //this creates a different name for each item in the database
                 dataCounter ++
 
                 database.ref('num/').set({
@@ -124,6 +147,7 @@ $("#search").click(function () {
         };
 
     });
+    $("#suggestions-list").show();
 });
 
 
@@ -132,7 +156,7 @@ $("#mapView").click(function () {
 
 var map = new google.maps.Map(document.getElementById('map-container-5'), {
     zoom: 12,
-    center: new google.maps.LatLng(47.6553216,-122.3155712),
+    center: new google.maps.LatLng(locations[1][1], locations[1][2]),
 
     mapTypeId: google.maps.MapTypeId.ROADMAP
   });
@@ -155,20 +179,22 @@ var map = new google.maps.Map(document.getElementById('map-container-5'), {
       }
     })(marker, i));
   }
+
+  $('#suggestions-list').hide();
+  $('#suggestions-map').show();
 });
 
 
  
  $("#clear").click(function () {
     $('#suggestions-list').empty();
-     $('#suggestions-map').empty();
+     $('#suggestions-map').val('');
      locations = [];
+     $('#priceInput').val('');
+     initAutocomplete();
   }); 
 
-$('#mapView').click (function () {
-    $('#suggestions-list').hide();
-    $('#suggestions-map').show();
-  }); 
+
 
   $('#listView').click (function () {
     $('#suggestions-list').show();
