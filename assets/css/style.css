@@ -2,12 +2,20 @@ body {
   background-color: rgb(110, 124, 120);
 }
 
-.jumbotron {
+section {
+  width: 100%;
+  padding: 7% 7%;
+  display: table;
+  margin: 0;
+  max-width: none;
+  height: 100vh;
+};
+/* .jumbotron {
   margin:4px;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
    background-color: rgba(245, 245, 245, 0.842);
-}
+} */
 
 .foot {
   text-align: center;
@@ -22,6 +30,171 @@ font-weight: bold;
 .btn {
 background-color: whitesmoke;
 }
+
+
+
+
+@-webkit-keyframes cf4FadeInOut {
+  0% {
+    opacity:1;
+  }
+  17% {
+    opacity:1;
+  }
+  25% {
+    opacity:0;
+  }
+  92% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+ }
+ 
+ @-moz-keyframes cf4FadeInOut {
+  0% {
+    opacity:1;
+  }
+  17% {
+    opacity:1;
+  }
+  25% {
+    opacity:0;
+  }
+  92% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+ }
+ 
+ @-o-keyframes cf4FadeInOut {
+  0% {
+    opacity:1;
+  }
+  17% {
+    opacity:1;
+  }
+  25% {
+    opacity:0;
+  }
+  92% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+ }
+ 
+ @keyframes cf4FadeInOut {
+  0% {
+    opacity:1;
+  }
+  17% {
+    opacity:1;
+  }
+  25% {
+    opacity:0;
+  }
+  92% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+ }
+ 
+ /* .box {
+   position:relative;
+    display: inline-block;
+ } */
+ #cf4a {
+   /* position: relative; */
+   margin: 0 0;
+   /* height: 80%; */
+   /* width: -webkit-fill-available; */
+ }
+
+ #cf4a img {
+   left: 0;
+   top: 5%;
+   position: absolute;
+   width: -webkit-fill-available;
+   height: 90%;
+
+ }
+
+#introText {
+   position: absolute;
+   z-index: 999;
+   top: 65%;
+   left: 20%;
+   /* right:45%; */
+   text-align: center;
+   width: 60%;
+   color: white;
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+ }
+
+ .title {
+   font-size: 60px;
+   /* font-weight: boloder; */
+   /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+ }
+
+ .intro {
+   font-size: 25px;
+   font-weight: bold;
+ }
+ 
+ #cf4a img {
+   -webkit-animation-name: cf4FadeInOut;
+   -webkit-animation-timing-function: ease-in-out;
+   -webkit-animation-iteration-count: infinite;
+   -webkit-animation-duration: 40s;
+ 
+   -moz-animation-name: cf4FadeInOut;
+   -moz-animation-timing-function: ease-in-out;
+   -moz-animation-iteration-count: infinite;
+   -moz-animation-duration: 40s;
+ 
+   -o-animation-name: cf4FadeInOut;
+   -o-animation-timing-function: ease-in-out;
+   -o-animation-iteration-count: infinite;
+   -o-animation-duration: 40s;
+ 
+   animation-name: cf4FadeInOut;
+   animation-timing-function: ease-in-out;
+   animation-iteration-count: infinite;
+   animation-duration: 40s;
+ }
+ #cf4a img:nth-of-type(1) {
+   -webkit-animation-delay: 30s;
+   -moz-animation-delay: 30s;
+   -o-animation-delay: 30s;
+   animation-delay: 30s;
+ }
+ #cf4a img:nth-of-type(2) {
+   -webkit-animation-delay: 20s;
+   -moz-animation-delay: 20s;
+   -o-animation-delay: 20s;
+   animation-delay: 20s;
+ }
+ #cf4a img:nth-of-type(3) {
+   -webkit-animation-delay: 10s;
+   -moz-animation-delay: 10s;
+   -o-animation-delay: 10s;
+   animation-delay: 10s;
+ }
+ #cf4a img:nth-of-type(4) {
+   -webkit-animation-delay: 0;
+   -moz-animation-delay: 0;
+   -o-animation-delay: 0;
+   animation-delay: 0;
+ }
+ 
 
 
 
@@ -45,12 +218,12 @@ background-color: rgb(252, 252, 252);
 
 }
 
-.card {
+/* .card {
   margin-top: 2%;
   background-color: rgba(245, 245, 245, 0.842);
   border: none;
   border-radius: 0%;
-}
+} */
 
 
 @media screen and (max-width: 768px) {
