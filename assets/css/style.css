@@ -1,5 +1,8 @@
 body {
-  background-color: rgb(110, 124, 120);
+  /* background-image: url("../images/background1.jpg"); */
+  background-image: url("../images/background2.png");
+  /* background-size: cover; */
+  
 }
 
 section {
@@ -9,6 +12,7 @@ section {
   margin: 0;
   max-width: none;
   height: 100vh;
+  /* background-image: url("../images/background1.jpg"); */
 };
 /* .jumbotron {
   margin:4px;
@@ -218,12 +222,16 @@ background-color: rgb(252, 252, 252);
 
 }
 
-/* .card {
-  margin-top: 2%;
-  background-color: rgba(245, 245, 245, 0.842);
-  border: none;
-  border-radius: 0%;
-} */
+.card {
+  border: 5px solid darkcyan;
+  border-radius: .5rem;
+}
+
+.card-header {
+  padding: .75rem 1.25rem;
+  background-color: darkcyan;
+  color: whitesmoke;
+}
 
 
 @media screen and (max-width: 768px) {
